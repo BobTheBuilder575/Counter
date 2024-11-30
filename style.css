@@ -1,0 +1,66 @@
+/* General styles */
+#countlabel {
+    position: relative;
+    top: 20vh;
+    display: block;
+    text-align: center;
+    font-size: 7em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+#btncontainer {
+    position: relative;
+    bottom: 17vh;
+    display: flex;
+    justify-content: center; /* this is for horizontal ok??OKKKAYY??? (horizontal is sleeping line)*/
+    align-items: center;    /* vertical is standing line, it centres vertically*/
+    flex-wrap: wrap;        /* wrap kinda lets stuff stcak if needed..prolly...hopefully*/
+    height: 100vh;          /* Full screen height */
+    margin: 0;
+}
+
+.buttons {
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgb(67, 137, 146);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+    margin: 10px; /* how much margin is too much margin*/
+    width: 200px; /* i shall not allow the buttons to resize as they please*/
+    text-align: center;
+}
+
+.buttons:hover {
+    background-color: rgb(14, 62, 68);
+}
+
+/* For devices wider (again, wider is sleeping line ki axis)  than 768px (laptops/desktops) */
+@media (min-width: 768px) {
+    #btncontainer {
+        flex-direction: row; 
+}
+}
+/* For devices narrower than 768px (mobiles/tablets) */
+@media (max-width: 767px) {
+    #countlabel {
+        font-size: 3em; 
+    }
+
+    #btncontainer {
+        flex-direction: column; /* we stacking our lil buttons here */
+    }
+
+    .buttons {
+        font-size: 1em; 
+        padding: 8px 10px; /* Reduce button paddingcuz it looks to weird in phones lolz*/
+        width: 80%; /* Buttons take 80% of the screen width am i trippin */
+    }
+/* i like it when my buttons r fat*/
+}
